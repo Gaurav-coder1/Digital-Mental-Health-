@@ -1,0 +1,384 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Sahara (सहारा) – Emotional Support Chatbot</title>
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css"/>
+  <style>
+    body {
+      font-family: 'Segoe UI', sans-serif;
+      margin: 0;
+      padding: 0;
+      background: #f6f8f6;
+      color: #333;
+      background: #ffe4be;
+    }
+
+    header {
+      background: url('day.jpg') center/cover no-repeat;
+      color: white;
+      text-align: center;
+      padding: 4rem 2rem;
+      min-height: 400px;
+    }
+
+    /* Navigation Bar */
+    nav {
+      display: flex;
+      justify-content: space-between;
+      padding: 1rem 2rem;
+      background-color: #e0f7e0;
+    }
+
+    .logo {
+      display: flex;
+      align-items: center;
+      font-size: 1.5rem;
+      font-weight: bold;
+      color: #2e7d32;
+    }
+
+    .logo-icon {
+      font-size: 2rem;
+      margin-right: 7px;
+      color: #4caf50;
+    }
+
+    .brand {
+      font-size: 1.2rem;
+      font-weight: 600;
+      color: #1d5a11;
+    }
+
+    .nav-links {
+      list-style: none;
+      display: flex;
+      gap: 1rem;
+      background: #fdffff;
+      border-radius: 26px;
+      padding: 6px 18px;
+      margin: 0 20px;
+      align-items: center;
+    }
+
+    .nav-links li {
+      padding: 6px 13px;
+      cursor: pointer;
+      border-radius: 14px;
+      transition: background 0.2s;
+      color: #3b3532;
+      font-size: 1rem;
+      position: relative;
+    }
+
+    .nav-links li.active,
+    .nav-links li:hover {
+      background: #d1e9df;
+      color: #181818;
+    }
+
+    .dropdown-content {
+      display: none;
+      position: absolute;
+      left: 0;
+      top: 34px;
+      background: #ffffff;
+      border-radius: 10px;
+      box-shadow: 0 4px 16px rgba(60,80,40,0.11);
+      padding: 0;
+      min-width: 140px;
+      z-index: 10;
+    }
+
+    .dropdown-content li {
+      width: 100%;
+      padding: 11px 18px;
+      color: #333;
+    }
+
+    .dropdown:hover .dropdown-content {
+      display: block;
+    }
+
+    .nav-actions {
+      display: flex;
+      align-items: center;
+      gap: 14px;
+    }
+
+    /* .profile-btn {
+      width: 108px;
+      height: 36px;
+      border: none;
+      border-radius: 50%;
+      background:#2196f3;
+      font-size: 1.5rem;
+      cursor: pointer;
+    } */
+
+    .login-button {
+      padding: 10px 22px;
+      border-radius: 23px;
+      border: none;
+      background: #246d2b;
+      color: #f9f9f9;
+      font-size: 1rem;
+      cursor: pointer;
+      transition: background 0.18s;
+    }
+
+    .login-button:hover {
+      background: #308b34;
+    }
+
+    /* Hero Section */
+    .hero {
+      margin-top: 3rem;
+      padding: 2rem;
+      text-align: center;
+    }
+
+    .hero h1 {
+      font-size: clamp(2rem, 5vw, 4rem);
+      margin-bottom: 1rem;
+    }
+
+    .hero p {
+      font-size: 1.1rem;
+      margin: 0 auto;
+      max-width: 600px;
+    }
+
+    section {
+      padding: 3rem 2rem;
+      text-align: center;
+    }
+
+    /* Main Container */
+    .container {
+      display: flex;
+      flex-wrap: wrap;
+      padding: 2rem;
+      gap: 2rem;
+      background: #ffe4be;
+    }
+
+    .left, .right {
+      flex: 1;
+      min-width: 300px;
+      background-color: rgb(148, 225, 149);
+      padding: 1.5rem;
+      border-radius: 10px;
+      box-shadow: 0 4px 8px rgba(0,0,0,0.1);
+      border-radius: 40px;
+    }
+
+    .left h2, .right h2 {
+      margin-top: 0;
+    }
+
+    .prompt-buttons button {
+      margin: 0.5rem;
+      padding: 0.5rem 1rem;
+      background-color: #e0f7fa;
+      border: 1px solid #2196f3;
+      border-radius: 15px;
+      cursor: pointer;
+    }
+
+    .chatlog {
+      margin-top: 1rem;
+      height: 150px;
+      overflow-y: auto;
+      background: #f9f9f9;
+      padding: 0.5rem;
+      border-radius: 5px;
+      border: 1px solid #ccc;
+      border-radius: 60px;
+    }
+
+    .chatlog p {
+      margin: 0.3rem 0;
+    }
+
+    input[type="text"] {
+      width: 70%;
+      height: 8%;
+      padding: 0.5rem;
+      margin-top: 1rem;
+      border: 1px solid #ccc;
+      border-radius: 25px;
+    }
+
+    button.send {
+      padding: 0.5rem 1rem;
+      background-color: #4caf50;
+      color: white;
+      border: none;
+      border-radius: 18px;
+      margin-left: 0.5rem;
+      cursor: pointer;
+
+    }
+
+    .recent-list p {
+      margin: 0.5rem 0;
+      padding: 0.5rem;
+      background-color: #f0f8ff;
+      border-left: 4px solid #2196f3;
+      border-radius: 15px;
+    }
+
+    .view-all {
+      margin-top: 1rem;
+      display: inline-block;
+      padding: 0.5rem 1rem;
+      background-color: #4caf50;
+      color: white;
+      border-radius: 20px;
+      text-decoration: none;
+    }
+
+    footer {
+      background-color: #c8e6c9;
+      padding: 1rem;
+      text-align: center;
+    }
+
+    @media (max-width: 768px) {
+      .container {
+        flex-direction: column;
+      }
+
+      nav {
+        flex-direction: column;
+        gap: 1rem;
+      }
+    }
+  </style>
+</head>
+<body>
+  <!-- Navigation -->
+  <nav>
+      <div class="logo">
+        <span class="logo-icon">🌱</span>
+        <span class="brand"><b>Manosahayak (मनोसहायक)</b><br><small>Digital Psychological Support</small></span>
+      </div>
+
+      <div class="logo">
+        <!-- ...logo code here... -->
+      </div>
+      <ul class="nav-links">
+        <li><a href="index.html" target="blank">Home</a></li>
+        <li class="active"><a href="Sahara.html" target="blank">Sahara</a></li>
+        <li><a href="Vyavastha.html">Vyavastha</a></li>
+        <li><a href="GyanKendra.html">Gyan Kendra</a></li>
+        <li><a href="Sangam.html">Sangam</a></li>
+        <li><a href="nirikshan.html">Nirikshan</a></li>
+        <!-- <li><a href="#">Contact</a></li>
+        <li><a href="#">About Us</a></li> -->
+      </ul>
+      <div class="nav-actions">
+        <!-- <button class="profile-btn"></button> -->
+        <div class="button-container">
+          <button class="login-button" onclick="window.location.href='login.html'">Login</button>
+        </div>
+      </div>
+  </nav>
+
+
+  <header>
+    <!-- Hero Section -->
+    <section class="hero">
+      <h1>WELCOME TO SAHARA</h1>
+      <p>Manosahayak is not just a mental health platform—it is a lifeline for students.</p>
+    </section>
+  </header>
+
+   <section class="services">
+        <h1><b><i class="fa-solid fa-handshake-angle"></i>Sahara (सहारा) - Al Chatbot</b></h1>
+    <div class="container">
+      <!-- Left Section: New Conversation -->
+      <div class="left">
+        <h2>Start New Conversation</h2>
+        <p>How are you feeling today?</p>
+        <div class="prompt-buttons">
+          <button onclick="sendQuick('Feeling Anxious')">Feeling Anxious</button>
+          <button onclick="sendQuick('Need Motivation')">Need Motivation</button>
+          <button onclick="sendQuick('Sleep Issues')">Sleep Issues</button>
+        </div>
+        <div class="chatlog" id="chatlog"></div>
+        <input type="text" id="userInput" placeholder="Type your feeling..." />
+        <button class="send" onclick="sendMessage()">Send</button>
+      </div>
+
+      <!-- Right Section: Recent Conversations -->
+      <div class="right">
+        <h2>Recent Conversations</h2>
+        <div class="recent-list">
+          <p>🕒 2 min ago: How can I manage stress better?</p>
+          <p>🕒 1 hour ago: I'm feeling anxious today</p>
+          <p>🕒 Yesterday: Tips for better sleep</p>
+        </div>
+        <a href="#" class="view-all">View All Conversations</a>
+      </div>
+    </div>
+   </section>
+
+  <script>
+    function sendMessage() {
+      const input = document.getElementById("userInput");
+      const chatlog = document.getElementById("chatlog");
+      const userText = input.value.trim();
+      if (userText === "") return;
+
+      appendChat("You", userText);
+      appendChat("Sahara Bot", getBotResponse(userText));
+      input.value = "";
+    }
+
+    function sendQuick(text) {
+      appendChat("You", text);
+      appendChat("Sahara Bot", getBotResponse(text));
+    }
+
+    function appendChat(sender, message) {
+      const chatlog = document.getElementById("chatlog");
+      const msg = document.createElement("p");
+      msg.textContent = `${sender}: ${message}`;
+      chatlog.appendChild(msg);
+      chatlog.scrollTop = chatlog.scrollHeight;
+    }
+
+    function getBotResponse(text) {
+      const lower = text.toLowerCase();
+      if (lower.includes("anxious")) {
+        return "You're not alone. Let's take a deep breath together.";
+      } else if (lower.includes("motivation")) {
+        return "You’ve got this! Every step forward counts.";
+      } else if (lower.includes("sleep")) {
+        return "Try a calming routine before bed. Want some tips?";
+      } else if (lower.includes("stress")) {
+        return "Managing stress starts with awareness. Want to explore coping strategies?";
+      } else {
+        return "I'm here to listen. Tell me more about how you're feeling.";
+      }
+    }
+
+    // Highlight nav and Try button alert already present
+
+    // Add click event to each card image
+    document.querySelectorAll('.card1 img').forEach(function(img) {
+      img.addEventListener('click', function() {
+        alert('You clicked: ' + img.alt);
+      });
+    });
+  </script>
+
+   <footer>
+    <p>&copy; 2025 Manosahayak. All rights reserved.</p>
+   </footer>
+
+</body>
+</html>

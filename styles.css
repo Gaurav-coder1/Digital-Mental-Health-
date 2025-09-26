@@ -1,0 +1,235 @@
+body {
+  font-family: 'Segoe UI', sans-serif;
+  margin: 0;
+  padding: 0;
+  background: #f6f8f6;
+  color: #333;
+  background: #ffe4be;
+}
+
+header {
+  background: url('day.jpg') center/cover no-repeat;
+  color: white;
+  text-align: center;
+  padding: 4rem 2rem;
+  min-height: 400px;
+}
+
+nav {
+  display: flex;
+  justify-content: space-between;
+  padding: 1rem 2rem;
+  background-color: #e0f7e0;
+}
+
+.logo {
+  display: flex;
+  align-items: center;
+  font-size: 1.5rem;
+  font-weight: bold;
+  color: #2e7d32;
+}
+
+.logo-icon {
+  font-size: 2rem;
+  margin-right: 7px;
+  color: #4caf50;
+}
+
+.brand {
+  font-size: 1.2rem;
+  font-weight: 600;
+  color: #1d5a11;
+}
+
+.nav-links {
+  list-style: none;
+  display: flex;
+  gap: 1rem;
+  background: #f7f9f9;
+  border-radius: 26px;
+  padding: 6px 18px;
+  margin: 0 20px;
+  align-items: center;
+}
+
+.nav-links li {
+  padding: 6px 13px;
+  cursor: pointer;
+  border-radius: 14px;
+  transition: background 0.2s;
+  color: #3b3532;
+  font-size: 1rem;
+  position: relative;
+}
+
+.nav-links li.active,
+.nav-links li:hover {
+  background: #d1e9df;
+  color: #181818;
+}
+
+.dropdown-content {
+  display: none;
+  position: absolute;
+  left: 0;
+  top: 34px;
+  background: #ffffff;
+  border-radius: 10px;
+  box-shadow: 0 4px 16px rgba(60,80,40,0.11);
+  padding: 0;
+  min-width: 140px;
+  z-index: 10;
+}
+
+.dropdown-content li {
+  width: 100%;
+  padding: 11px 18px;
+  color: #333;
+}
+
+.dropdown:hover .dropdown-content {
+  display: block;
+}
+
+.nav-actions {
+  display: flex;
+  align-items: center;
+  gap: 14px;
+}
+
+.profile-btn {
+  width: 36px;
+  height: 36px;
+  border: none;
+  border-radius: 50%;
+  background: #e9f3f1;
+  font-size: 1.5rem;
+  cursor: pointer;
+}
+
+.try-btn {
+  padding: 10px 22px;
+  border-radius: 23px;
+  border: none;
+  background: #246d2b;
+  color: #fff;
+  font-size: 1rem;
+  cursor: pointer;
+  transition: background 0.18s;
+}
+
+.try-btn:hover {
+  background: #308b34;
+}
+
+.hero h1 {
+  font-size: clamp(2rem, 5vw, 4rem);
+  margin-bottom: 1rem;
+  color: #fbfcfb;
+}
+
+.hero button {
+  background-color: #53e75a;
+  color: #fff;
+  border: none;
+  padding: 0.75rem 1.5rem;
+  font-size: 1rem;
+  border-radius: 5px;
+  cursor: pointer;
+}
+
+section {
+  padding: 3rem 2rem;
+  text-align: center;
+}
+
+.cards {
+  display: flex;
+  flex-direction: column;
+  gap: 1.5rem;
+}
+
+.card {
+  background: rgb(148, 225, 149);
+  border: 1px solid #f0f0f0;
+  padding: 1.5rem;
+  border-radius: 20px;
+  box-shadow: 2px 2px 10px rgba(0,0,0,0.2);
+  display: flex;
+  flex-direction: row; /* ✅ Always horizontal */
+  align-items: center;
+  justify-content: space-between;
+  text-align: left;
+  gap: 1.5rem;
+  height: auto;
+}
+
+.card1 {
+  flex: 1; /* ✅ Makes both sides flexible */
+  padding: 1rem;
+}
+
+.card1 h1 {
+  font-size: clamp(1.2rem, 2vw, 2rem);
+}
+
+.card1 p {
+  font-size: clamp(0.9rem, 1.2vw, 1rem);
+  line-height: 1.6;
+}
+
+.card1 img {
+  max-width: 100%;
+  height: auto;
+  border: 2px solid black;
+  border-radius: 13px;
+  box-shadow: 4px 7px 7px 0px black;
+  cursor: pointer;
+}
+
+/* Side-by-side on larger screens */
+@media (min-width: 768px) {
+  .card {
+    flex-direction: row;
+    align-items: center;
+    text-align: left;
+  }
+
+  .card1 {
+    width: 50%;
+  }
+
+  .card1 img {
+    margin-top: 0;
+    margin-left: 1rem;
+  }
+}
+
+.testimonial {
+  background: #e8f5e9;
+  padding: 1rem;
+  margin: 1rem auto;
+  border-radius: 5px;
+  max-width: 400px;
+}
+
+input[type="email"] {
+  padding: 0.5rem;
+  width: 250px;
+  margin-right: 0.5rem;
+}
+
+button {
+  background-color: #2e7d32;
+  color: white;
+  border: none;
+  padding: 0.5rem 1rem;
+  border-radius: 5px;
+}
+
+footer {
+  background-color: #c8e6c9;
+  padding: 1rem;
+  text-align: center;
+}

@@ -1,0 +1,405 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Gyan Kendra</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css"/>
+    
+    <style>
+        body {
+        font-family: 'Segoe UI', sans-serif;
+        margin: 0;
+        padding: 0;
+        background: #f6f8f6;
+        color: #333;
+        background: #f5eadc;
+        }
+
+        .main-header {
+        background: url(day1.jpg) center/cover no-repeat;
+        color: white;
+        text-align: left;
+        padding: 4rem 2rem;
+        min-height: 400px;
+        
+        }
+
+        .main-nav {
+        display: flex;
+        justify-content: space-between;
+        padding: 1rem 2rem;
+        background-color: #e0f7e0;
+        }
+
+        .logo {
+        display: flex;
+        align-items: center;
+        font-size: 1.5rem;
+        font-weight: bold;
+        color: #2e7d32;
+        }
+
+        .logo-icon {
+        font-size: 2rem;
+        margin-right: 7px;
+        color: #4caf50;
+        }
+
+        .brand {
+        font-size: 1.2rem;
+        font-weight: 600;
+        color: #1d5a11;
+        }
+
+        .nav-links {
+        list-style: none;
+        display: flex;
+        gap: 1rem;
+        background: #f7f9f9;
+        border-radius: 26px;
+        padding: 6px 18px;
+        margin: 0 20px;
+        align-items: center;
+        }
+
+        .nav-links li {
+        padding: 6px 13px;
+        cursor: pointer;
+        border-radius: 14px;
+        transition: background 0.2s;
+        color: #3b3532;
+        font-size: 1rem;
+        position: relative;
+        }
+
+        .nav-links li.active,
+        .nav-links li:hover {
+        background: #d1e9df;
+        color: #181818;
+        }
+
+        .dropdown-content {
+        display: none;
+        position: absolute;
+        left: 0;
+        top: 34px;
+        background: #ffffff;
+        border-radius: 10px;
+        box-shadow: 0 4px 16px rgba(60,80,40,0.11);
+        padding: 0;
+        min-width: 140px;
+        z-index: 10;
+        }
+
+        .dropdown-content li {
+        width: 100%;
+        padding: 11px 18px;
+        color: #333;
+        }
+
+        .dropdown:hover .dropdown-content {
+        display: block;
+        }
+
+        .nav-actions {
+        display: flex;
+        align-items: center;
+        gap: 14px;
+        }
+
+        .profile-btn {
+        width: 108px;
+        height: 36px;
+        border: none;
+        border-radius: 50%;
+        background: #2196f3;
+        font-size: 1.5rem;
+        cursor: pointer;
+        }
+
+        .login-button {
+        padding: 10px 22px;
+        border-radius: 23px;
+        border: none;
+        background: #246d2b;
+        color: #fff;
+        font-size: 1rem;
+        cursor: pointer;
+        transition: background 0.18s;
+        }
+
+        .login-button:hover {
+        background: #308b34;
+        }
+
+        .hero h1 {
+        font-size: clamp(2rem, 5vw, 4rem);
+        margin-bottom: 1rem;
+        color: #16ef16;
+        text-align: left;
+
+        }
+
+        body {
+        font-family: 'Segoe UI', sans-serif;
+        margin: 0;
+        padding: 0;
+        background: #f9f9f9;
+        color: #333;
+      }
+
+      .sub-header {
+        background: #2e7d32;
+        color: white;
+        padding: 1rem;
+        text-align: center;
+      }
+
+      .sub-nav {
+        display: flex;
+        justify-content: space-between;
+        padding: 0rem 2rem;
+        background-color: #e0f7e0;
+        border-radius: 28px;
+        }
+
+      nav ul {
+        display: flex;
+        flex-wrap: wrap;
+        justify-content: center;
+        list-style: none;
+        padding: 0;
+        margin-top: 1rem;
+      }
+
+      .sub-nav li {
+        margin: 0.5rem;
+        padding: 0.5rem 1rem;
+        background: #a5d6a7;
+        border-radius: 20px;
+        cursor: pointer;
+      }
+
+      nav li.active {
+        background: #66bb6a;
+        font-weight: bold;
+      }
+
+      .header-top {
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+        flex-wrap: wrap;
+      }
+
+      .search-container {
+        display: flex;
+        align-items: center;
+        gap: 0.5rem;
+      }
+
+      #searchInput {
+        padding: 0.5rem;
+        border-radius: 6px;
+        border: none;
+        width: 220px;
+      }
+
+      #searchBtn {
+        background: #66bb6a;
+        border: none;
+        padding: 0.5rem 0.8rem;
+        border-radius: 6px;
+        cursor: pointer;
+        color: white;
+      }
+
+      main {
+        display: flex;
+        flex-wrap: wrap;
+        justify-content: space-around;
+        padding: 2rem;
+      }
+
+      section {
+        width: 45%;
+        margin-bottom: 2rem;
+      }
+
+      .video-card, .article-card {
+        background: white;
+        padding: 1rem;
+        margin-bottom: 1rem;
+        border-radius: 8px;
+        box-shadow: 0 2px 5px rgba(0,0,0,0.1);
+      }
+
+      .tag {
+        display: inline-block;
+        background: #c8e6c9;
+        padding: 0.3rem 0.6rem;
+        border-radius: 12px;
+        font-size: 0.9rem;
+        margin-top: 0.5rem;
+      }
+
+      button {
+        background: #388e3c;
+        color: white;
+        border: none;
+        padding: 0.7rem 1.2rem;
+        border-radius: 6px;
+        cursor: pointer;
+      }
+      
+      footer {
+        background-color: #c8e6c9;
+        padding: 1rem;
+        text-align: center;
+      }
+
+        
+    </style>
+</head>
+<body>
+     <!-- NAV BAR  -->
+    <nav class="main-nav">
+      <div class="logo">
+        <span class="logo-icon">🌱</span>
+        <span class="brand"><b>Manosahayak (मनोसहायक)</b><br><small>Digital Psychological Support</small></span>
+      </div>
+
+
+      <ul class="nav-links">
+        <li><a href="index.html">Home</a></li>
+        <li><a href="Sahara.html" target="blank">Sahara</a></li>
+        <li><a href="Vyavastha.html" target="blank">Vyavastha</a></li>
+        <li class="active"><a href="GyanKendra.html">Gyan Kendra</a></li>
+        <li><a href="Sangam.html">Sangam</a></li>
+        <li><a href="nirikshan.html">Nirikshan</a></li>
+        <!-- <li><a href="#">Contact</a></li>
+        <li><a href="#">About Us</a></li> -->
+      </ul>
+
+
+      <div class="nav-actions">
+        <!-- <button class="profile-btn"></button> -->
+        <div class="button-container">
+          <button class="login-button" onclick="window.location.href='login.html'">Login</button>
+        </div>
+      </div>
+
+
+    </nav>
+
+    <header class="main-header">
+        <section class="hero">
+            <h1>WELCOME TO <br> GYAN KENDRA</h1>
+            <p>Manosahayak is not just a mental health platform—it is a lifeline for students.</p>
+        </section>
+    </header>
+
+    <header class="sub-header">
+    <h1>📚 Gyaan Kendra – ज्ञान केन्द्र</h1>
+    <nav class="sub-nav">
+      <ul id="filters">
+        <li class="active">All</li>
+        <li>Meditation</li>
+        <li>Education</li>
+        <li>Wellness</li>
+        <li>Mental Health</li>
+        <li>Self-Help</li>
+        <li>Psychology</li>
+      </ul>
+
+      <div class="header-top">
+      <div class="search-container">
+        <input type="text" id="searchInput" placeholder="Search videos or articles..." />
+        <button id="searchBtn">🔍</button>
+      </div>
+  </div>
+
+    </nav>
+  </header>
+
+  <main>
+    <section class="videos">
+      <h2>🎥 Featured Videos</h2>
+      <div class="video-list">
+        <div class="video-card" data-category="Meditation">
+          <h3>5-Minute Breathing Exercise</h3>
+          <p><strong>Category:</strong> Meditation</p>
+          <p><strong>Duration:</strong> 5:23 min</p>
+        </div>
+        <div class="video-card" data-category="Education">
+          <h3>Understanding Anxiety</h3>
+          <p><strong>Category:</strong> Education</p>
+          <p><strong>Duration:</strong> 4:12 min</p>
+        </div>
+        <div class="video-card" data-category="Mental Health">
+          <h3>Sleep Hygiene Tips</h3>
+          <p><strong>Category:</strong> Mental Health</p>
+          <p><strong>Duration:</strong> 6:10 min</p>
+        </div>
+      </div>
+      <button class="view-all">View All Videos</button>
+    </section>
+
+    <section class="articles">
+      <h2>📖 Articles & Resources</h2>
+      <div class="article-list">
+        <div class="article-card" data-category="Mental Health">
+          <h3>10 Signs You Need Professional Help</h3>
+          <span class="tag">Mental Health · 5 min read</span>
+        </div>
+        <div class="article-card" data-category="Mental Health">
+          <h3>Building Resilience in Daily Life</h3>
+          <span class="tag">Mental Health · 6 min read</span>
+        </div>
+        <div class="article-card" data-category="Psychology">
+          <h3>The Science of Happiness</h3>
+          <span class="tag">Psychology · 7 min read</span>
+        </div>
+      </div>
+      <button class="browse-articles">Browse Articles</button>
+    </section>
+  </main>
+
+  <script>
+    const filters = document.querySelectorAll('#filters li');
+    const videoCards = document.querySelectorAll('.video-card');
+    const articleCards = document.querySelectorAll('.article-card');
+
+    filters.forEach(filter => {
+      filter.addEventListener('click', () => {
+        document.querySelector('#filters li.active').classList.remove('active');
+        filter.classList.add('active');
+        const category = filter.textContent;
+
+        videoCards.forEach(card => {
+          card.style.display = category === 'All' || card.dataset.category === category ? 'block' : 'none';
+        });
+
+        articleCards.forEach(card => {
+          card.style.display = category === 'All' || card.dataset.category === category ? 'block' : 'none';
+        });
+      });
+    });
+
+    document.getElementById('searchBtn').addEventListener('click', () => {
+      const query = document.getElementById('searchInput').value.toLowerCase();
+
+      [...videoCards, ...articleCards].forEach(card => {
+        const text = card.textContent.toLowerCase();
+        card.style.display = text.includes(query) ? 'block' : 'none';
+      });
+    });
+  </script>
+
+  <footer>
+    <p>&copy; 2025 Manosahayak. All rights reserved.</p>
+   </footer>
+    
+</body>
+</html>

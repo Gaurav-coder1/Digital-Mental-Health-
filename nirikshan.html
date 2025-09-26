@@ -1,0 +1,400 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Nirikshan – Mental Health Analytics</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css"/>
+    <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+
+<style>
+    body {
+    font-family: 'Segoe UI', sans-serif;
+    margin: 0;
+    padding: 0;
+    background: #f6f8f6;
+    color: #333;
+    background: #b5f7b9;
+    }
+
+    .main-header {
+    background: url(day.jpg) center/cover no-repeat;
+    color: white;
+    text-align: center;
+    padding: 4rem 2rem;
+    min-height: 400px;
+    
+    }
+
+    .main-nav {
+    display: flex;
+    justify-content: space-between;
+    padding: 1rem 2rem;
+    background-color: #e0f7e0;
+    }
+
+    .logo {
+    display: flex;
+    align-items: center;
+    font-size: 1.5rem;
+    font-weight: bold;
+    color: #2e7d32;
+    }
+
+    .logo-icon {
+    font-size: 2rem;
+    margin-right: 7px;
+    color: #4caf50;
+    }
+
+    .brand {
+    font-size: 1.2rem;
+    font-weight: 600;
+    color: #1d5a11;
+    }
+
+    .nav-links {
+    list-style: none;
+    display: flex;
+    gap: 1rem;
+    background: #f7f9f9;
+    border-radius: 26px;
+    padding: 6px 18px;
+    margin: 0 20px;
+    align-items: center;
+    }
+
+    .nav-links li {
+    padding: 6px 13px;
+    cursor: pointer;
+    border-radius: 14px;
+    transition: background 0.2s;
+    color: #3b3532;
+    font-size: 1rem;
+    position: relative;
+    }
+
+    .nav-links li.active,
+    .nav-links li:hover {
+    background: #d1e9df;
+    color: #181818;
+    }
+
+    .dropdown-content {
+    display: none;
+    position: absolute;
+    left: 0;
+    top: 34px;
+    background: #ffffff;
+    border-radius: 10px;
+    box-shadow: 0 4px 16px rgba(60,80,40,0.11);
+    padding: 0;
+    min-width: 140px;
+    z-index: 10;
+    }
+
+    .dropdown-content li {
+    width: 100%;
+    padding: 11px 18px;
+    color: #333;
+    }
+
+    .dropdown:hover .dropdown-content {
+    display: block;
+    }
+
+    .nav-actions {
+    display: flex;
+    align-items: center;
+    gap: 14px;
+    }
+
+    .profile-btn {
+    width: 108px;
+    height: 36px;
+    border: none;
+    border-radius: 50%;
+    background: #2196f3;
+    font-size: 1.5rem;
+    cursor: pointer;
+    }
+
+    .login-button {
+    padding: 10px 22px;
+    border-radius: 23px;
+    border: none;
+    background: #246d2b;
+    color: #fff;
+    font-size: 1rem;
+    cursor: pointer;
+    transition: background 0.18s;
+    }
+
+    .login-button:hover {
+    background: #308b34;
+    }
+
+    .hero h1 {
+    font-size: clamp(2rem, 5vw, 4rem);
+    margin-bottom: 1rem;
+    color:#487af9;
+    }
+
+    .hero button {
+    background-color: #53e75a;
+    color: #fff;
+    border: none;
+    padding: 0.75rem 1.5rem;
+    font-size: 1rem;
+    border-radius: 5px;
+    cursor: pointer;
+    }
+    body {
+    font-family: 'Segoe UI', sans-serif;
+    margin: 0;
+    background: #f4f9f6;
+    color: #333;
+    }
+
+    .sub-header {
+    background: #388e3c;
+    color: white;
+    padding: 1.5rem;
+    text-align: center;
+    }
+
+    .subtitle {
+    font-size: 1rem;
+    color: #c8e6c9;
+    }
+
+    .overview {
+    display: flex;
+    justify-content: space-around;
+    padding: 1rem;
+    background: #e8f5e9;
+    }
+
+    .metric {
+    background: white;
+    padding: 1rem;
+    border-radius: 8px;
+    box-shadow: 0 2px 6px rgba(0,0,0,0.1);
+    text-align: center;
+    width: 30%;
+    }
+
+    .charts {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    padding: 2rem;
+    gap: 2rem;
+    }
+
+    .chart-box {
+    background: white;
+    padding: 1rem;
+    border-radius: 8px;
+    width: 400px;
+    box-shadow: 0 2px 6px rgba(0,0,0,0.1);
+    }
+
+    .goals {
+    background: #fff;
+    padding: 2rem;
+    margin: 2rem;
+    border-radius: 8px;
+    box-shadow: 0 2px 6px rgba(0,0,0,0.1);
+    }
+
+    .goals ul {
+    list-style: none;
+    padding: 0;
+    }
+
+    .goals li {
+    margin: 0.5rem 0;
+    font-size: 1rem;
+    }
+
+    .status {
+    margin-top: 1rem;
+    font-weight: bold;
+    color: #2e7d32;
+    }
+
+    footer {
+    background-color: #c8e6c9;
+    padding: 1rem;
+    text-align: center;
+    }
+
+</style>
+
+</head>
+
+
+<body>
+   <!-- NAV BAR  -->
+    <nav class="main-nav">
+      <div class="logo">
+        <span class="logo-icon">🌱</span>
+        <span class="brand"><b>Manosahayak (मनोसहायक)</b><br><small>Digital Psychological Support</small></span>
+      </div>
+
+
+      <ul class="nav-links">
+        <li><a href="index.html">Home</a></li>
+        <li><a href="Sahara.html" target="blank">Sahara</a></li>
+        <li><a href="Vyavastha.html" target="blank">Vyavastha</a></li>
+        <li><a href="GyanKendra.html">Gyan Kendra</a></li>
+        <li><a href="Sangam.html">Sangam</a></li>
+        <li class="active"><a href="nirikshan.html">Nirikshan</a></li>
+        <!-- <li><a href="#">Contact</a></li>
+        <li><a href="#">About Us</a></li> -->
+      </ul>
+
+
+      <div class="nav-actions">
+        <!-- <button class="profile-btn"></button> -->
+        <div class="button-container">
+          <button class="login-button" onclick="window.location.href='login.html'">Login</button>
+        </div>
+      </div>
+
+
+    </nav>
+
+    <header class="main-header">
+    
+        <section class="hero">
+            <h1>WELCOME TO NIRIKSHAN</h1>
+            <p>Manosahayak is not just a mental health platform—it is a lifeline for students.</p>
+        </section>
+    </header>
+
+    <header class="sub-header">
+    <h1>📊 Nirikshan – निरीक्षण</h1>
+    <p class="subtitle">Your Mental Health Dashboard</p>
+  </header>
+
+  <main>
+    <section class="overview">
+      <div class="metric">
+        <h2>Average Mood Score</h2>
+        <p>8.1 / week</p>
+      </div>
+      <div class="metric">
+        <h2>Therapy Sessions</h2>
+        <p>18</p>
+      </div>
+      <div class="metric">
+        <h2>Mindful Minutes</h2>
+        <p>127</p>
+      </div>
+    </section>
+
+    <section class="charts">
+      <div class="chart-box">
+        <h3>Weekly Mood Trends</h3>
+        <canvas id="moodChart"></canvas>
+      </div>
+
+      <div class="chart-box">
+        <h3>Emotion Distribution</h3>
+        <canvas id="emotionChart"></canvas>
+      </div>
+
+      <div class="chart-box">
+        <h3>Monthly Progress</h3>
+        <canvas id="progressChart"></canvas>
+      </div>
+    </section>
+
+    <section class="goals">
+      <h3>Personal Goals</h3>
+      <ul>
+        <li>🧘 Daily Meditation – 20 min/day</li>
+        <li🏃> Exercise Routine – 30 min/day</li>
+        <li>😴 Sleep Schedule – 8 hours/night</li>
+        <li>🗣️ Therapy Sessions – 1x/week</li>
+      </ul>
+      <p class="status">✅ Overall Progress: <strong>On Track</strong></p>
+    </section>
+  </main>
+
+  <script>
+    // Weekly Mood Trends (Line Chart)
+new Chart(document.getElementById('moodChart'), {
+  type: 'line',
+  data: {
+    labels: ['Mon', 'Tue', 'Wed', 'Thu', 'Fri', 'Sat', 'Sun'],
+    datasets: [
+      {
+        label: 'Week 1',
+        data: [7, 8, 6, 7, 9, 8, 8],
+        borderColor: '#66bb6a',
+        fill: false
+      },
+      {
+        label: 'Week 2',
+        data: [6, 7, 7, 8, 8, 9, 9],
+        borderColor: '#43a047',
+        fill: false
+      }
+    ]
+  },
+  options: {
+    responsive: true,
+    plugins: { legend: { position: 'bottom' } }
+  }
+});
+
+// Emotion Distribution (Pie Chart)
+new Chart(document.getElementById('emotionChart'), {
+  type: 'pie',
+  data: {
+    labels: ['Happy', 'Calm', 'Sad', 'Stressed', 'Other'],
+    datasets: [{
+      data: [45, 25, 15, 10, 5],
+      backgroundColor: ['#ffca28', '#81c784', '#90caf9', '#ef5350', '#bdbdbd']
+    }]
+  },
+  options: {
+    responsive: true,
+    plugins: { legend: { position: 'bottom' } }
+  }
+});
+
+// Monthly Progress (Bar Chart)
+new Chart(document.getElementById('progressChart'), {
+  type: 'bar',
+  data: {
+    labels: ['W1', 'W2', 'W3', 'W4'],
+    datasets: [
+      {
+        label: 'Goals Completed',
+        data: [4, 5, 6, 5],
+        backgroundColor: '#66bb6a'
+      },
+      {
+        label: 'Therapy Sessions',
+        data: [1, 1, 1, 1],
+        backgroundColor: '#43a047'
+      }
+    ]
+  },
+  options: {
+    responsive: true,
+    plugins: { legend: { position: 'bottom' } }
+  }
+});
+  </script>
+
+  <footer>
+    <p>&copy; 2025 Manosahayak. All rights reserved.</p>
+   </footer>
+  
+</body>
+</html>

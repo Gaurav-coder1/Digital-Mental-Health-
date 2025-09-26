@@ -1,0 +1,392 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>Vyavastha</title>
+     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css"/>
+    <!-- <link rel="stylesheet" href="styles2.css" /> -->
+     <style>
+        body {
+    font-family: 'Segoe UI', sans-serif;
+    margin: 0;
+    padding: 0;
+    background: #f6f8f6;
+    color: #333;
+    background: #ffe4be;
+}
+
+.main-header {
+    background: url('day.jpg') center/cover no-repeat;
+    color: white;
+    text-align: center;
+    padding: 4rem 2rem;
+    min-height: 400px;
+}
+
+/* Navigation Bar */
+nav {
+    display: flex;
+    justify-content: space-between;
+    padding: 1rem 2rem;
+    background-color: #e0f7e0;
+}
+
+.logo {
+    display: flex;
+    align-items: center;
+    font-size: 1.5rem;
+    font-weight: bold;
+    color: #2e7d32;
+}
+
+.logo-icon {
+    font-size: 2rem;
+    margin-right: 7px;
+    color: #4caf50;
+}
+
+.brand {
+    font-size: 1.2rem;
+    font-weight: 600;
+    color: #1d5a11;
+}
+
+.nav-links {
+    list-style: none;
+    display: flex;
+    gap: 1rem;
+    background: #ffffff;
+    border-radius: 26px;
+    padding: 6px 18px;
+    margin: 0 20px;
+    align-items: center;
+}
+
+.nav-links li {
+    padding: 6px 13px;
+    cursor: pointer;
+    border-radius: 14px;
+    transition: background 0.2s;
+    color: #3b3532;
+    font-size: 1rem;
+    position: relative;
+}
+
+.nav-links li.active,
+.nav-links li:hover {
+    background: #d1e9df;
+    color: #181818;
+}
+
+.dropdown-content {
+    display: none;
+    position: absolute;
+    left: 0;
+    top: 34px;
+    background: #ffffff;
+    border-radius: 10px;
+    box-shadow: 0 4px 16px rgba(60,80,40,0.11);
+    padding: 0;
+    min-width: 140px;
+    z-index: 10;
+}
+
+.dropdown-content li {
+    width: 100%;
+    padding: 11px 18px;
+    color: #333;
+}
+
+.dropdown:hover .dropdown-content {
+    display: block;
+}
+
+.nav-actions {
+    display: flex;
+    align-items: center;
+    gap: 14px;
+}
+
+.profile-btn {
+    width: 108px;
+    height: 36px;
+    border: none;
+    border-radius: 50%;
+    background:#e9f3f1;
+    font-size: 1.5rem;
+    cursor: pointer;
+}
+
+.login-button {
+    padding: 10px 22px;
+    border-radius: 23px;
+    border: none;
+    background: #246d2b;
+    color: #f9f9f9;
+    font-size: 1rem;
+    cursor: pointer;
+    transition: background 0.18s;
+}
+
+.login-button:hover {
+    background: #308b34;
+}
+
+/* Hero Section */
+.hero {
+    margin-top: 3rem;
+    padding: 2rem;
+    text-align: center;
+}
+
+.hero h1 {
+    font-size: clamp(2rem, 5vw, 4rem);
+    margin-bottom: 1rem;
+}
+
+.hero p {
+    font-size: 1.1rem;
+    margin: 0 auto;
+    max-width: 600px;
+}
+
+section {
+    padding: 3rem 2rem;
+    text-align: center;
+}
+
+body {
+    font-family: 'Segoe UI', sans-serif;
+    margin: 0;
+    padding: 0;
+    background-color: #f4f9f4;
+    color: #333;
+}
+
+header {
+    background: linear-gradient(to right, #2196f3, #4caf50);
+    color: white;
+    padding: 2rem;
+    text-align: center;
+}
+
+header h1 {
+    font-size: 2.5rem;
+    margin-bottom: 0.5rem;
+}
+
+.actions {
+    display: flex;
+    justify-content: center;
+    gap: 1rem;
+    margin-top: 1rem;
+    flex-wrap: wrap;
+}
+
+.actions button {
+    padding: 0.75rem 1.5rem;
+    background-color: white;
+    color: #2196f3;
+    border: none;
+    border-radius: 5px;
+    font-weight: bold;
+    cursor: pointer;
+    transition: background-color 0.3s ease;
+}
+
+.actions button:hover {
+    background-color: #e3f2fd;
+}
+
+.doctor-section {
+    padding: 2rem;
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+    gap: 2rem;
+}
+
+.doctor-card {
+    background-color: white;
+    border-radius: 10px;
+    box-shadow: 0 4px 8px rgba(0,0,0,0.1);
+    padding: 1.5rem;
+    
+}
+
+.doctor-card h3 {
+    margin-top: 0;
+    color: #2196f3;
+}
+
+.doctor-card p {
+    margin: 0.5rem 0;
+}
+
+.doctor-card .buttons {
+    margin-top: 1rem;
+    display: flex;
+    gap: 1rem;
+    justify-content: center;
+}
+
+.doctor-card button {
+    padding: 0.5rem 1rem;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    font-weight: bold;
+}
+
+.book-btn {
+    background-color: #4caf50;
+    color: white;
+}
+
+.profile-btn {
+    background-color: #2196f3;
+    color: white;
+}
+
+footer {
+  background-color: #c8e6c9;
+  padding: 1rem;
+  text-align: center;
+}
+
+@media (max-width: 768px) {
+    .actions {
+    flex-direction: column;
+    align-items: center;
+    }
+}
+
+     </style>
+  </head>
+  <body>
+      	  <!-- Navigation -->
+  <nav>
+    <div class="logo">
+      <span class="logo-icon">🌱</span>
+      <span class="brand"><b>Manosahayak (मनोसहायक)</b><br><small>Digital Psychological Support</small></span>
+    </div>
+
+    <ul class="nav-links">
+        <li><a href="index.html">Home</a></li>
+        <li><a href="Sahara.html">Sahara</a></li>
+        <li class="active"><a href="Vyavastha.html">Vyavastha</a></li>
+        <li><a href="GyanKendra.html">Gyan Kendra</a></li>
+        <li><a href="Sangam.html">Sangam</a></li>
+        <li><a href="nirikshan.html">Nirikshan</a></li>
+        <!-- <li><a href="#">Contact</a></li>
+        <li><a href="#">About Us</a></li> -->
+      </ul>
+
+    <div class="nav-actions">
+        <!-- <button class="profile-btn"></button> -->
+        <div class="button-container">
+          <button class="login-button" onclick="window.location.href='login.html'">Login</button>
+        </div>
+      </div>
+  </nav>
+  <!-- Hero Section -->
+  <header class="main-header">
+    <section class="hero">
+      <h1>WELCOME TO VYAVASTHA</h1>
+      <p>Manosahayak is not just a mental health platform—it is a lifeline for students.</p>
+    </section>
+  </header>
+  
+  <header class="sub-header">
+    <h1>Vyavastha (व्यवस्था)</h1>
+    <p>Professional Consultations for Mental and Physical Well-being</p>
+    <div class="actions">
+      <button onclick="alert('Calling emergency support...')">🚨 Emergency Call</button>
+      <button onclick="alert('Connecting to instant consultation...')">⚡ Instant Consultation</button>
+      <button onclick="alert('Redirecting to appointment scheduler...')">📅 Schedule Appointment</button>
+    </div>
+  </header>
+
+  <section class="doctor-section">
+
+    
+    <div class="doctor-card">
+      <img src="doctor1.jpg" alt="Dr. Priya Sharma" style="width:60%; border-radius:8px; margin-bottom:1rem;">
+      <h3>Dr. Priya Sharma</h3>
+      <p><strong>Specialty:</strong> Psychiatrist</p>
+      <p><strong>Availability:</strong> Today 3:00 PM</p>
+      <p><strong>Fee:</strong> ₹800/session</p>
+      <p><strong>Languages:</strong> English, Bengali</p>
+      <div class="buttons">
+        <button class="book-btn" onclick="alert('Booking with Dr. Priya Sharma')">Book Now</button>
+        <button class="profile-btn" onclick="alert('Viewing profile of Dr. Priya Sharma')">Profile</button>
+      </div>
+    </div>
+
+    <div class="doctor-card">
+        <img src="doctor2.jpg" alt="Dr. Priya Sharma" style="width:60%; border-radius:8px; margin-bottom:1rem;">
+      <h3>Dr. Rajesh Kumar</h3>
+      <p><strong>Specialty:</strong> Psychiatrist</p>
+      <p><strong>Availability:</strong> Tomorrow 11:00 AM</p>
+      <p><strong>Fee:</strong> ₹1000/session</p>
+      <p><strong>Languages:</strong> English, Hindi, Marathi</p>
+      <div class="buttons">
+        <button class="book-btn" onclick="alert('Booking with Dr. Rajesh Kumar')">Book Now</button>
+        <button class="profile-btn" onclick="alert('Viewing profile of Dr. Rajesh Kumar')">Profile</button>
+      </div>
+    </div>
+
+    <div class="doctor-card">
+        <img src="doctor3.jpg" alt="Dr. Priya Sharma" style="width:60%; border-radius:8px; margin-bottom:1rem;">
+      <h3>Dr. Anita Singh</h3>
+      <p><strong>Specialty:</strong> Counselor</p>
+      <p><strong>Availability:</strong> Today 6:00 PM</p>
+      <p><strong>Fee:</strong> ₹500/session</p>
+      <p><strong>Languages:</strong> English</p>
+      <div class="buttons">
+        <button class="book-btn" onclick="alert('Booking with Dr. Anita Singh')">Book Now</button>
+        <button class="profile-btn" onclick="alert('Viewing profile of Dr. Anita Singh')">Profile</button>
+      </div>
+    </div>
+  </section>
+
+   <footer>
+    <p>&copy; 2025 Manosahayak. All rights reserved.</p>
+    </footer>
+
+    <script>
+  // Highlight active navigation tab
+  document.querySelectorAll('.nav-links li').forEach(function(navItem) {
+    navItem.addEventListener('click', function() {
+      document.querySelectorAll('.nav-links li').forEach(function(item) {
+        item.classList.remove('active');
+      });
+      navItem.classList.add('active');
+    });
+  });
+
+  // Add click event to doctor cards (if images are added later)
+  document.querySelectorAll('.doctor-card img').forEach(function(img) {
+    img.addEventListener('click', function() {
+      alert('You clicked: ' + img.alt);
+    });
+  });
+
+  // Optional: Simulate modal for booking/profile (can be replaced with real modal logic)
+  document.querySelectorAll('.book-btn').forEach(function(btn) {
+    btn.addEventListener('click', function() {
+      const doctorName = btn.closest('.doctor-card').querySelector('h3').textContent;
+      alert('Booking initiated for ' + doctorName);
+    });
+  });
+
+  document.querySelectorAll('.profile-btn').forEach(function(btn) {
+    btn.addEventListener('click', function() {
+      const doctorName = btn.closest('.doctor-card').querySelector('h3').textContent;
+      alert('Opening profile of ' + doctorName);
+    });
+  });
+</script>
+
+
+
+  </body>
+</html>

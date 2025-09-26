@@ -1,0 +1,141 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Manosahayak (मनोसहायाक) login page</title>
+  <style>
+    body {
+      margin: 0;
+      font-family: 'Segoe UI', sans-serif;
+      background-image: url(day.jpg);
+      background-size: cover;
+      /* background: linear-gradient(to left, #3939f9, #58ea92); */
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      height: 100vh;
+    }
+    .login-container {
+      background-color: #fff;
+      padding: 40px;
+      border-radius: 12px;
+      /* box-shadow: 0 4px 12px rgba(0,0,0,0.1); */
+      width: 100%;
+      max-width: 350px;
+      /* box-shadow: 0 px 32px rgba(16, 2, 2, 0.9); */
+      opacity: 0.8;
+    }
+    h1 {
+      font-size: 28px;
+      color: #2e7d32;
+      margin-bottom: 10px;
+      text-align: center;
+      font-weight: bold;
+    }
+    p.subtitle {
+      text-align: center;
+      color: #666;
+      margin-bottom: 30px;
+    }
+    input[type="email"],
+    input[type="password"] {
+      width: 100%;
+      padding: 12px;
+      margin-bottom: 15px;
+      border: 1px solid #ccc;
+      border-radius: 8px;
+      font-size: 14px;
+    }
+    .options {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      font-size: 14px;
+      margin-bottom: 20px;
+    }
+    .options label {
+      display: flex;
+      align-items: center;
+      gap: 6px;
+    }
+    .options a {
+      color: #2e7d32;
+      text-decoration: none;
+    }
+    button {
+      width: 100%;
+      padding: 12px;
+      border: none;
+      border-radius: 8px;
+      font-size: 16px;
+      cursor: pointer;
+      margin-bottom: 15px;
+    }
+    .login-btn {
+      background-color: #2e7d32;
+      color: white;
+    }
+    .google-btn {
+      background-color: white;
+      border: 1px solid #ccc;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      gap: 10px;
+    }
+    .signup {
+      text-align: center;
+      font-size: 14px;
+    }
+    .signup a {
+      color: #2e7d32;
+      text-decoration: none;
+    }
+  </style>
+</head>
+<body>
+  <div class="login-container">
+    <h1>Manosahayak (मनोसहायाक)</h1>
+    <p class="subtitle">Welcome Back! Fill in the details and let’s catch up</p>
+    <form id="loginForm">
+      <input type="email" id="email" placeholder="Email Address" required />
+      <input type="password" id="password" placeholder="Password" required />
+      <div class="options">
+        <label><input type="checkbox" id="stayLoggedIn" /> Stay logged in</label>
+        <a href="#">Forgot Password?</a>
+      </div>
+      <button type="submit" class="login-btn">Log In</button>
+    </form>
+    <button class="google-btn">
+      <img src="https://www.svgrepo.com/show/475656/google-color.svg" alt="Google" width="20" />
+      Continue with Google
+    </button>
+    <div class="signup">
+      Don’t have an account? <a href="#">Sign up</a>
+    </div>
+  </div>
+
+  <script>
+    document.getElementById("loginForm").addEventListener("submit", function (e) {
+      e.preventDefault(); // Prevent form from submitting
+
+      const email = document.getElementById("email").value.trim();
+      const password = document.getElementById("password").value.trim();
+
+      if (!email || !password) {
+        alert("Please fill in both fields.");
+        return;
+      }
+
+      // Mock login logic
+      if (email === "user@example.com" && password === "password123") {
+        alert("Login successful! Welcome to Manosahayak.");
+        // Redirect or load dashboard here
+      } else {
+        alert("Invalid credentials. Please try again.");
+      }
+    });
+  </script>
+</body>
+</html>

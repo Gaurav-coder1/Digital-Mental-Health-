@@ -1,0 +1,441 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Manosahayak – Health is Wealth</title>
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css"/>
+  <!-- <link rel="stylesheet" href="styles.css" /> -->
+   <style>
+body {
+  font-family: 'Segoe UI', sans-serif;
+  margin: 0;
+  padding: 0;
+  background: #f6f8f6;
+  color: #333;
+  background: #ffe4be;
+}
+
+header {
+  background: url('day.jpg') center/cover no-repeat;
+  color: white;
+  text-align: center;
+  padding: 4rem 2rem;
+  min-height: 400px;
+  
+}
+
+nav {
+  display: flex;
+  justify-content: space-between;
+  padding: 1rem 2rem;
+  background-color: #e0f7e0;
+}
+
+.logo {
+  display: flex;
+  align-items: center;
+  font-size: 1.5rem;
+  font-weight: bold;
+  color: #2e7d32;
+}
+
+.logo-icon {
+  font-size: 2rem;
+  margin-right: 7px;
+  color: #4caf50;
+}
+
+.brand {
+  font-size: 1.2rem;
+  font-weight: 600;
+  color: #1d5a11;
+}
+
+.nav-links {
+  list-style: none;
+  display: flex;
+  gap: 1rem;
+  background: #f7f9f9;
+  border-radius: 26px;
+  padding: 6px 18px;
+  margin: 0 20px;
+  align-items: center;
+}
+
+.nav-links li {
+  padding: 6px 13px;
+  cursor: pointer;
+  border-radius: 14px;
+  transition: background 0.2s;
+  color: #3b3532;
+  font-size: 1rem;
+  position: relative;
+}
+
+.nav-links li.active,
+.nav-links li:hover {
+  background: #d1e9df;
+  color: #181818;
+}
+
+.dropdown-content {
+  display: none;
+  position: absolute;
+  left: 0;
+  top: 34px;
+  background: #ffffff;
+  border-radius: 10px;
+  box-shadow: 0 4px 16px rgba(60,80,40,0.11);
+  padding: 0;
+  min-width: 140px;
+  z-index: 10;
+}
+
+.dropdown-content li {
+  width: 100%;
+  padding: 11px 18px;
+  color: #333;
+}
+
+.dropdown:hover .dropdown-content {
+  display: block;
+}
+
+.nav-actions {
+  display: flex;
+  align-items: center;
+  gap: 14px;
+}
+
+.profile-btn {
+  width: 108px;
+  height: 36px;
+  border: none;
+  border-radius: 50%;
+  background: #2196f3;
+  font-size: 1.5rem;
+  cursor: pointer;
+}
+
+.login-button {
+  padding: 10px 22px;
+  border-radius: 23px;
+  border: none;
+  background: #246d2b;
+  color: #fff;
+  font-size: 1rem;
+  cursor: pointer;
+  transition: background 0.18s;
+}
+
+.login-button:hover {
+  background: #308b34;
+}
+
+.hero h1 {
+  font-size: clamp(2rem, 5vw, 4rem);
+  margin-bottom: 1rem;
+  color: #fbfcfb;
+}
+
+.hero button {
+  background-color: #53e75a;
+  color: #fff;
+  border: none;
+  padding: 0.75rem 1.5rem;
+  font-size: 1rem;
+  border-radius: 5px;
+  cursor: pointer;
+}
+
+section {
+  padding: 3rem 2rem;
+  text-align: center;
+}
+
+.cards {
+  display: flex;
+  flex-direction: column;
+  gap: 1.5rem;
+}
+
+.card {
+  background: rgb(148, 225, 149);
+  border: 1px solid #f0f0f0;
+  padding: 1.5rem;
+  border-radius: 20px;
+  box-shadow: 2px 2px 10px rgba(0,0,0,0.2);
+  display: flex;
+  flex-direction: row; /* ✅ Always horizontal */
+  align-items: center;
+  justify-content: space-between;
+  text-align: left;
+  gap: 1.5rem;
+  height: auto;
+}
+
+.card1 {
+  flex: 1; /* ✅ Makes both sides flexible */
+  padding: 1rem;
+}
+
+.card1 h1 {
+  font-size: clamp(1.2rem, 2vw, 2rem);
+}
+
+.card1 p {
+  font-size: clamp(0.9rem, 1.2vw, 1rem);
+  line-height: 1.6;
+}
+
+.card1 img {
+  max-width: 100%;
+  height: auto;
+  border: 2px solid black;
+  border-radius: 13px;
+  box-shadow: 4px 7px 7px 0px black;
+  cursor: pointer;
+}
+
+/* Side-by-side on larger screens */
+@media (min-width: 768px) {
+  .card {
+    flex-direction: row;
+    align-items: center;
+    text-align: left;
+  }
+
+  .card1 {
+    width: 50%;
+  }
+
+  .card1 img {
+    margin-top: 0;
+    margin-left: 1rem;
+  }
+}
+
+.testimonial {
+  background: #e8f5e9;
+  padding: 1rem;
+  margin: 1rem auto;
+  border-radius: 5px;
+  max-width: 400px;
+}
+
+input[type="email"] {
+  padding: 0.5rem;
+  width: 250px;
+  margin-right: 0.5rem;
+}
+
+button {
+  background-color: #2e7d32;
+  color: white;
+  border: none;
+  /* padding: 0.5rem 1rem; */
+  border-radius: 5px;
+}
+
+footer {
+  background-color: #c8e6c9;
+  padding: 1rem;
+  text-align: center;
+}
+   </style>
+</head>
+<body>
+    
+    <nav>
+      <div class="logo">
+        <span class="logo-icon">🌱</span>
+        <span class="brand"><b>Manosahayak (मनोसहायक)</b><br><small>Digital Psychological Support</small></span>
+      </div>
+
+
+      <ul class="nav-links">
+        <li class="active"><a href="index.html">Home</a></li>
+        <li><a href="Sahara.html" target="blank">Sahara</a></li>
+        <li><a href="Vyavastha.html" target="blank">Vyavastha</a></li>
+        <li><a href="GyanKendra.html">Gyan Kendra</a></li>
+        <li><a href="Sangam.html">Sangam</a></li>
+        <li><a href="nirikshan.html">Nirikshan</a></li>
+        <!-- <li><a href="#">Contact</a></li>
+        <li><a href="#">About Us</a></li> -->
+      </ul>
+
+      
+
+      <!-- <ul class="nav-links">
+        <li class="active">Home</li>
+        <li>Sahara</li>
+        <li>Vyavastha</li>
+        <li>Gyan Kendra</li>
+        <li>Sangam</li>
+        <li>Nirikshan</li>
+        <li>Contact</li>
+        <li>About Us</li>
+     </ul> -->
+
+     <!-- <div class="card1"><img src="Sahara.jpg" alt="Sahara Image"></div>
+      <div class="card1"><img src="Vyavastha.jpg" alt="Vyavastha Image"></div>
+      <div class="card1"><img src="Gayan-kendra.jpg" alt="Gayan Kendra Image"></div>
+      <div class="card1"><img src="Sangam.jpg" alt="Sangam Image"></div>
+      <div class="card1"><img src="Nirikshan.jpg" alt="Nirikshan Image"></div> -->
+
+      <div class="nav-actions">
+        <!-- <button class="profile-btn"></button> -->
+        <div class="button-container">
+          <button class="login-button" onclick="window.location.href='login.html'">Login</button>
+        </div>
+      </div>
+    </nav>
+
+  <header>
+    
+    <section class="hero">
+      <h1>WELCOME TO MANOSAHAYAK</h1>
+      <p>Manosahayak is not just a mental health platform—it is a lifeline for students.</p>
+      <!-- <button>Get Started</button> -->
+    </section>
+  </header>
+
+  <section class="services">
+        <h1><b>Our Services</b></h1>
+        <div class="cards">
+            <div class="card">
+                <div class="card1"><h1><b>🧠 Sahara (सहारा)</b></h1> <p>Talk to our AI chatbot 24/7 for support and guidance.</p><p>An intelligent and empathetic chatbot designed as the first line of psychological support for students. It engages
+                    users in real-time conversations, offering scientifically validated coping strategies for common mental health challenges such as anxiety,
+                    stress, academic pressure, and loneliness. The chatbot is not a replacement for a counsellor but acts as a bridge, gently guiding students 
+                    toward professional help when their situation requires deeper intervention. This ensures that support is accessible 24/7, stigma-free, 
+                    and in multiple languages.</p>
+                </div>
+                <div class="card1"><img src="Sahara.jpg" alt="Sahara Image"></div>
+            </div>
+            <div class="card">
+                <div class="card1"><h1><b>👩‍⚕️ Vyavastha (व्यवस्था)</b></h1>A secure, privacy-first appointment scheduling system that allows students to 
+                    confidentially book sessions with on-campus counsellors or connect directly with helpline services in urgent cases. The system 
+                    prioritizes discretion and ease of use, ensuring that students can seek help without fear of judgment. With features like encrypted 
+                    communication, flexible scheduling, and reminders, Vyavastha reduces barriers to seeking professional mental health care, making access
+                    both seamless and reassuring.</div>
+                <div class="card1"><img src="Vyavastha.jpg" alt="Vyavastha image"></div>
+            </div>
+            <div class="card">
+                <div class="card1"><h1><b>📚 Gyan Kendra (ज्ञान केंद्र)</b></h1> A digital library of psychoeducational materials tailored for students’ mental 
+                    well-being. The hub includes self-help guides, video lectures by experts, relaxation audios, mindfulness exercises, and curated content 
+                    addressing common issues like exam stress, sleep hygiene, and emotional regulation. Uniquely, the resources are made available in 
+                    multiple regional languages—Hindi, English, Urdu, Dogri, and Kashmiri—ensuring inclusivity and cultural sensitivity. By empowering 
+                    students with knowledge, Gyan Kendra promotes proactive self-care and resilience.</div>
+                <div class="card1"><img src="Gayan kendra.jpg" alt="Gaya image"></div>
+            </div>
+            <div class="card">
+                <div class="card1"><h1><b>🤝 Sangam (संगम)</b></h1> A moderated digital community space where students can share experiences, support each
+                    other, and find solidarity. Unlike unstructured online forums, Sangam ensures safety and trust by involving trained student volunteers 
+                    as peer supporters, who are equipped with basic skills in empathetic listening and mental health first aid. The platform encourages open
+                    dialogue in a stigma-free environment, reduces feelings of isolation, and helps students realize they are not alone in their struggles.</div>
+                <div class="card1"><img src="Sangam.jpg" alt="Sangam image"></div>
+            </div>
+            <div class="card">
+                <div class="card1"><h1><b>📈 Nirikshan (निरीक्षण)</b></h1> A powerful analytics tool designed for institutional authorities and mental health
+                    professionals. Nirikshan collects anonymized and aggregated data from student interactions across the platform, generating insights into
+                    emerging mental health trends. For example, it can highlight periods of heightened stress such as exams, detect rising cases of anxiety,
+                    or track engagement with resources. This evidence-based feedback loop enables institutions to design timely interventions, allocate 
+                    resources more effectively, and strengthen their overall student wellness policies.</div>
+                <div class="card1"><img src="Nirikshan.jpg" alt="Nirikshan Image"></div>
+            </div>
+          </div>
+
+          <div class="card1">
+            <h1><b>Sahara</b></h1>
+            <p>Talk to our AI chatbot...</p>
+            <a href="Sahara.html"><img src="Sahara.jpg" alt="Sahara Image"></a>
+          </div>
+          <div class="card1">
+            <h1><b>Vyavastha</b></h1>
+            <a href="Vyavastha.html"><img src="Vyavastha.jpg" alt="Vyavastha Image"></a>
+          </div>
+
+  </section>
+
+  <section class="testimonials">
+    <h2>What Our Clients Say</h2>
+    <div class="testimonial">"Manosahayak changed my life!" – Priya</div>
+    <div class="testimonial">"I feel healthier and happier." – Arjun</div>
+  </section>
+
+  <section class="promotion">
+    <h2>Reconnect to All Aspects of Yourself</h2>
+    <p>Join our yoga and mindfulness programs.</p>
+  </section>
+
+  <!-- <section class="treatments">
+    <h2>Our Treatment from Our Experts</h2>
+    <div class="cards">
+      <div class="card">Health Monitoring</div>
+      <div class="card">Nutrition Plans</div>
+      <div class="card">Mental Wellness</div>
+      <div class="card">Physical Therapy</div>
+    </div>
+  </section> -->
+
+  <!-- <section class="app-promo">
+    <h2>Download Our App</h2>
+    <p>Track your wellness journey anytime, anywhere.</p>
+  </section> -->
+
+  <!-- <section class="blog">
+    <h2>Our Most Recent Articles</h2>
+    <div class="blog-post">"5 Tips for Better Sleep"</div>
+    <div class="blog-post">"Mindful Eating Habits"</div>
+    <div class="blog-post">"Stretching for Stress Relief"</div>
+  </section>
+
+  <section class="newsletter">
+    <h2>Stay in Touch</h2>
+    <input type="email" placeholder="Enter your email" />
+    <button>Subscribe</button>
+  </section> -->
+
+  <footer>
+    <p>&copy; 2025 Manosahayak. All rights reserved.</p>
+  </footer>
+
+  <!-- <script src="script.js"></script> -->
+   <script>
+    // script.js
+
+  // ✅ Highlight active nav link
+  const navLinks = document.querySelectorAll(".nav-links li");
+  navLinks.forEach(link => {
+    link.addEventListener("click", () => {
+      navLinks.forEach(l => l.classList.remove("active"));
+      link.classList.add("active");
+    });
+  });
+
+  // ✅ Smooth scroll to sections (if section exists)
+  navLinks.forEach(link => {
+    link.addEventListener("click", () => {
+      const sectionName = link.innerText.toLowerCase().trim();
+      const target = document.querySelector(`section.${sectionName}`);
+      if (target) {
+        target.scrollIntoView({ behavior: "smooth" });
+      }
+    });
+  });
+
+  // Highlight nav and Try button alert already present
+
+  // Add click event to each card image
+  document.querySelectorAll('.card1 img').forEach(function(img) {
+    img.addEventListener('click', function() {
+      alert('You clicked: ' + img.alt);
+    });
+  });
+
+
+
+    </script>
+</body>
+</html>

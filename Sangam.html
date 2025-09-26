@@ -1,0 +1,445 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Sangam (संगम)</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css"/>
+
+<style>
+body {
+  font-family: 'Segoe UI', sans-serif;
+  margin: 0;
+  padding: 0;
+  background: #f6f8f6;
+  color: #333;
+  background: #b5f7b9;
+}
+
+.main-header {
+  background: url(day.jpg) center/cover no-repeat;
+  color: white;
+  text-align: center;
+  padding: 4rem 2rem;
+  min-height: 400px;
+  
+}
+
+.main-nav {
+  display: flex;
+  justify-content: space-between;
+  padding: 1rem 2rem;
+  background-color: #e0f7e0;
+}
+
+.logo {
+  display: flex;
+  align-items: center;
+  font-size: 1.5rem;
+  font-weight: bold;
+  color: #2e7d32;
+}
+
+.logo-icon {
+  font-size: 2rem;
+  margin-right: 7px;
+  color: #4caf50;
+}
+
+.brand {
+  font-size: 1.2rem;
+  font-weight: 600;
+  color: #1d5a11;
+}
+
+.nav-links {
+  list-style: none;
+  display: flex;
+  gap: 1rem;
+  background: #f7f9f9;
+  border-radius: 26px;
+  padding: 6px 18px;
+  margin: 0 20px;
+  align-items: center;
+}
+
+.nav-links li {
+  padding: 6px 13px;
+  cursor: pointer;
+  border-radius: 14px;
+  transition: background 0.2s;
+  color: #3b3532;
+  font-size: 1rem;
+  position: relative;
+}
+
+.nav-links li.active,
+.nav-links li:hover {
+  background: #d1e9df;
+  color: #181818;
+}
+
+.dropdown-content {
+  display: none;
+  position: absolute;
+  left: 0;
+  top: 34px;
+  background: #ffffff;
+  border-radius: 10px;
+  box-shadow: 0 4px 16px rgba(60,80,40,0.11);
+  padding: 0;
+  min-width: 140px;
+  z-index: 10;
+}
+
+.dropdown-content li {
+  width: 100%;
+  padding: 11px 18px;
+  color: #333;
+}
+
+.dropdown:hover .dropdown-content {
+  display: block;
+}
+
+.nav-actions {
+  display: flex;
+  align-items: center;
+  gap: 14px;
+}
+
+.profile-btn {
+  width: 108px;
+  height: 36px;
+  border: none;
+  border-radius: 50%;
+  background: #2196f3;
+  font-size: 1.5rem;
+  cursor: pointer;
+}
+
+.login-button {
+  padding: 10px 22px;
+  border-radius: 23px;
+  border: none;
+  background: #246d2b;
+  color: #fff;
+  font-size: 1rem;
+  cursor: pointer;
+  transition: background 0.18s;
+}
+
+.login-button:hover {
+  background: #308b34;
+}
+
+.hero h1 {
+  font-size: clamp(2rem, 5vw, 4rem);
+  margin-bottom: 1rem;
+  color:#487af9;
+}
+
+.hero button {
+  background-color: #53e75a;
+  color: #fff;
+  border: none;
+  padding: 0.75rem 1.5rem;
+  font-size: 1rem;
+  border-radius: 5px;
+  cursor: pointer;
+}
+body {
+  font-family: 'Segoe UI', sans-serif;
+  margin: 0;
+  background: #f0f8f5;
+  color: #333;
+}
+.sub-header {
+  background: #2e7d32;
+  color: white;
+  padding: 1.5rem;
+  text-align: center;
+}
+
+.subtitle {
+  font-size: 1rem;
+  margin-top: 0.3rem;
+  color: #c8e6c9;
+}
+
+.search-bar {
+  margin: 1rem auto;
+  display: flex;
+  justify-content: center;
+}
+
+#searchInput {
+  padding: 0.7rem;
+  width: 320px;
+  border-radius: 8px;
+  border: none;
+  font-size: 1rem;
+  box-shadow: 0 2px 6px rgba(0,0,0,0.1);
+}
+
+nav ul {
+  display: flex;
+  justify-content: center;
+  flex-wrap: wrap;
+  list-style: none;
+  padding: 0;
+  margin: 1rem 0;
+  position: sticky;
+  top: 0;
+  background: #2e7d32;
+  z-index: 10;
+}
+
+.sub-nav li {
+  margin: 0.5rem;
+  padding: 0.5rem 1rem;
+  background: #a5d6a7;
+  border-radius: 20px;
+  cursor: pointer;
+  transition: background 0.3s ease;
+}
+
+nav li.active {
+  background: #66bb6a;
+  font-weight: bold;
+}
+
+.indicators {
+  display: flex;
+  justify-content: center;
+  gap: 1rem;
+  margin-bottom: 1rem;
+  font-size: 0.9rem;
+}
+
+#groupList {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  padding: 1rem;
+}
+
+.group-card {
+  background: white;
+  width: 320px;
+  margin: 1rem;
+  padding: 1rem;
+  border-radius: 12px;
+  box-shadow: 0 4px 12px rgba(0,0,0,0.08);
+  transition: transform 0.2s ease;
+}
+
+.group-card:hover {
+  transform: scale(1.02);
+}
+
+.group-card h3 {
+  margin-top: 0;
+  font-size: 1.2rem;
+}
+
+.group-meta {
+  font-size: 0.9rem;
+  color: #555;
+}
+
+.group-description {
+  margin: 0.5rem 0;
+}
+
+.group-topic {
+  font-style: italic;
+  color: #2e7d32;
+}
+
+.join-btn {
+  background: #4caf50;
+  color: white;
+  border: none;
+  padding: 0.6rem 1rem;
+  border-radius: 6px;
+  cursor: pointer;
+  margin-top: 0.5rem;
+}
+
+footer {
+  background-color: #c8e6c9;
+  padding: 1rem;
+  text-align: center;
+}
+    </style>
+</head>
+<body>
+    <!-- NAV BAR  -->
+    <nav class="main-nav">
+      <div class="logo">
+        <span class="logo-icon">🌱</span>
+        <span class="brand"><b>Manosahayak (मनोसहायक)</b><br><small>Digital Psychological Support</small></span>
+      </div>
+
+
+      <ul class="nav-links">
+        <li><a href="index.html">Home</a></li>
+        <li><a href="Sahara.html" target="blank">Sahara</a></li>
+        <li><a href="Vyavastha.html" target="blank">Vyavastha</a></li>
+        <li><a href="GyanKendra.html">Gyan Kendra</a></li>
+        <li class="active"><a href="Sangam.html">Sangam</a></li>
+        <li><a href="nirikshan.html">Nirikshan</a></li>
+        <!-- <li><a href="#">Contact</a></li>
+        <li><a href="#">About Us</a></li> -->
+      </ul>
+
+
+      <div class="nav-actions">
+        <!-- <button class="profile-btn"></button> -->
+        <div class="button-container">
+          <button class="login-button" onclick="window.location.href='login.html'">Login</button>
+        </div>
+      </div>
+
+
+    </nav>
+
+    <header class="main-header">
+    
+        <section class="hero">
+            <h1>WELCOME TO SANGAM</h1>
+            <p>Manosahayak is not just a mental health platform—it is a lifeline for students.</p>
+        </section>
+    </header>
+
+    <header class="sub-header">
+    <h1>🤝 Sangam – संगम</h1>
+    <p class="subtitle">Find your people. Share your story. Heal together.</p>
+
+    <div class="search-bar">
+      <input type="text" id="searchInput" placeholder="🔍 Search support groups..." aria-label="Search groups" />
+    </div>
+
+    <nav class="sub-nav">
+      <ul id="categoryTabs" role="tablist">
+        <li role="tab" class="active">All Groups</li>
+        <li role="tab">Students</li>
+        <li role="tab">Parents</li>
+        <li role="tab">Professionals</li>
+        <li role="tab">General</li>
+      </ul>
+    </nav>
+
+    <div class="indicators">
+      <span>🛡️ Anonymous & Safe</span>
+      <span>💬 Supportive Community</span>
+      <span>👥 Moderated Groups</span>
+    </div>
+  </header>
+
+  <main>
+    <section id="groupList" aria-live="polite">
+      <!-- Group cards will be injected here -->
+    </section>
+  </main>
+
+  <script>
+        const groups = [
+    {
+        name: "Students Mental Health",
+        category: "Students",
+        members: 234,
+        topics: 12,
+        description: "A safe space for students to discuss mental health concerns, stress, and campus life challenges.",
+        sample: "Struggling with exam anxiety"
+    },
+    {
+        name: "Working Parents Support",
+        category: "Parents",
+        members: 188,
+        topics: 9,
+        description: "A group for working parents managing work-life balance and family stress.",
+        sample: "How to manage work-life balance"
+    },
+    {
+        name: "Anxiety & Depression Support",
+        category: "General",
+        members: 276,
+        topics: 15,
+        description: "A safe space for individuals experiencing anxiety and depression to share and find coping strategies.",
+        sample: "How to help on difficult days"
+    },
+    {
+        name: "Remote Workers Community",
+        category: "Professionals",
+        members: 160,
+        topics: 7,
+        description: "A community for remote workers to share experiences, challenges, and tips for working from home.",
+        sample: "How to stay motivated when working remotely"
+    },
+    {
+        name: "Mindfulness & Meditation",
+        category: "General",
+        members: 198,
+        topics: 10,
+        description: "Group focused on mindfulness practices, meditation, and mental wellness.",
+        sample: "Best meditation apps"
+    },
+    {
+        name: "Graduate Student Support",
+        category: "Students",
+        members: 175,
+        topics: 8,
+        description: "Support group for graduate students facing research stress and thesis challenges.",
+        sample: "Tips for thesis completion"
+    }
+    ];
+
+    const groupList = document.getElementById('groupList');
+    const tabs = document.querySelectorAll('#categoryTabs li');
+    const searchInput = document.getElementById('searchInput');
+
+    function renderGroups(filter = "All Groups", query = "") {
+    groupList.innerHTML = "";
+    groups.forEach(group => {
+        const matchCategory = filter === "All Groups" || group.category === filter;
+        const matchQuery = group.name.toLowerCase().includes(query) || group.description.toLowerCase().includes(query);
+        if (matchCategory && matchQuery) {
+        const card = document.createElement('div');
+        card.className = 'group-card';
+        card.innerHTML = `
+            <h3>${group.name}</h3>
+            <p class="group-meta">${group.members} members · ${group.topics} topics</p>
+            <p class="group-description">${group.description}</p>
+            <p class="group-topic">💬 “${group.sample}”</p>
+            <button class="join-btn">Join Conversation</button>
+        `;
+        groupList.appendChild(card);
+        }
+    });
+    }
+
+    tabs.forEach(tab => {
+    tab.addEventListener('click', () => {
+        document.querySelector('#categoryTabs li.active').classList.remove('active');
+        tab.classList.add('active');
+        renderGroups(tab.textContent.trim(), searchInput.value.toLowerCase());
+    });
+    });
+
+    searchInput.addEventListener('input', () => {
+    const query = searchInput.value.toLowerCase();
+    const activeTab = document.querySelector('#categoryTabs li.active').textContent.trim();
+    renderGroups(activeTab, query);
+    });
+
+    // Initial render
+    renderGroups();
+  </script>
+
+  <footer>
+    <p>&copy; 2025 Manosahayak. All rights reserved.</p>
+   </footer>
+</body>
+</html>
